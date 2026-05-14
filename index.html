@@ -842,6 +842,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:56px 60px 3
     <div class="mq-i">Mobile Apps <span class="mq-star c">✦</span></div>
     <div class="mq-i">UI / UX Design <span class="mq-star m">✦</span></div>
     <div class="mq-i">Video Editing <span class="mq-star g">✦</span></div>
+    <div class="mq-i">POS Systems <span class="mq-star p">✦</span></div>
     <div class="mq-i">Brand Identity <span class="mq-star b">✦</span></div>
     <div class="mq-i">React &amp; Next.js <span class="mq-star c">✦</span></div>
     <div class="mq-i">Flutter &amp; React Native <span class="mq-star m">✦</span></div>
@@ -850,6 +851,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:56px 60px 3
     <div class="mq-i">Mobile Apps <span class="mq-star c">✦</span></div>
     <div class="mq-i">UI / UX Design <span class="mq-star m">✦</span></div>
     <div class="mq-i">Video Editing <span class="mq-star g">✦</span></div>
+    <div class="mq-i">POS Systems <span class="mq-star p">✦</span></div>
     <div class="mq-i">Brand Identity <span class="mq-star b">✦</span></div>
     <div class="mq-i">React &amp; Next.js <span class="mq-star c">✦</span></div>
     <div class="mq-i">Flutter &amp; React Native <span class="mq-star m">✦</span></div>
@@ -901,6 +903,18 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:56px 60px 3
       <p class="svc-desc">YouTube videos, corporate reels, motion graphics — we transform raw footage into cinematic visual stories that captivate and convert viewers.</p>
       <div class="svc-chips"><span class="chip">Premiere Pro</span><span class="chip">After Effects</span><span class="chip">Motion Graphics</span><span class="chip">Color Grading</span></div>
     </div>
+
+    <div class="svc rev" data-svc="pos" id="svc-pos">
+      <div class="svc-accent"></div>
+      <div class="svc-n">05</div>
+      <div class="svc-icon"><svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="4" y="8" width="36" height="26" rx="2" stroke="#3ef0b8" stroke-width="1.8"/><path d="M4 16h36" stroke="#3ef0b8" stroke-width="1.8"/><rect x="9" y="21" width="8" height="5" rx="1" stroke="rgba(62,240,184,.5)" stroke-width="1.5"/><rect x="21" y="21" width="8" height="5" rx="1" stroke="rgba(62,240,184,.5)" stroke-width="1.5"/><rect x="9" y="30" width="6" height="3" rx="1" fill="rgba(62,240,184,.3)"/><path d="M8 38h28M22 34v4" stroke="#3ef0b8" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div class="svc-status-badge" id="svc-badge-pos"></div>
+      <h3 class="svc-name">POS System Development</h3>
+      <p class="svc-desc">Powerful, intuitive point-of-sale systems tailored for your business — inventory management, sales tracking, real-time reports, and multi-platform support.</p>
+      <div class="svc-chips"><span class="chip">Inventory</span><span class="chip">Sales Reports</span><span class="chip">Multi-platform</span><span class="chip">Real-time</span><span class="chip">Cloud Sync</span></div>
+    </div>
+
+
   </div>
 </section>
 
@@ -1145,6 +1159,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:56px 60px 3
             <option>App Development</option>
             <option>Branding &amp; Graphic Design</option>
             <option>Video Editing &amp; Motion</option>
+            <option>POS System Development</option>
             <option>Multiple Services</option>
           </select>
         </div>
@@ -1622,7 +1637,7 @@ function fdEsc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;
     }, () => renderProjectGrid([]));
 
     // ── 2. SERVICE STATUSES ──────────
-    ['web','mobile','design','video'].forEach(sid => {
+    ['web','mobile','design','video','pos'].forEach(sid => {
       onSnapshot(doc(db,'services',sid), snap => {
         const status = snap.exists() ? (snap.data().status||'available') : 'available';
         applyServiceBadge(sid, status);
